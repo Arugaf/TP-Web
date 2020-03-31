@@ -24,6 +24,13 @@
 
 <div class="container-fluid justify-content-center">
     <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-12 px-5" style="height: 1000px; background-color: #20c997">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="col-lg-3 col-md-4 d-none d-md-block px-3">
+            {% include 'include/popular_tags.html' %}
+            {% include 'include/best_users.html' %}
+        </div>
     </div>
 </div>
 </body>
