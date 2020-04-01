@@ -2,3 +2,15 @@
     border-bottom: 1px solid #969696 !important;
     background-color: #f9f9f9 !important;
 }
+
+.question-card {
+    background-color: #21d5a0;
+}
+
+.question-card:hover {
+    background-color: #23e1a9;
+}
+
+.content-block {
+    background-color: #20c997
+}
