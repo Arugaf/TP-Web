@@ -1,0 +1,24 @@
+<div class="question-card border border-light rounded-left pt-3 pl-3 pr-3 pb-1 mb-4">
+    <div class="row align-items-center">
+
+        <!-- TODO: Можно ли обойтись без колонок? Криво меняется -->
+        <div class="col-3 col-lg-2 col-xl-2">
+
+            <!-- Avatar -->
+            <a class="mt-5" href="#">
+                <!-- TODO: Относительный размер, подгружать нужного пользователя, центровка аватара -->
+                <img src="/static/img/avatar_user_default_contact_profile_male-512.png" width="60" alt="">
+            </a>
+
+            <!-- Rating -->
+            {% include 'include/question/components/rating.html' %}
+
+        </div>
+
+        <!-- Question -->
+        <div class="col-9 col-lg-10 col-xl-10">
+            {% block card_content %}{% endblock %}
+        </div>
+
+    </div>
+</div>

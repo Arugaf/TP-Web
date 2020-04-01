@@ -1,0 +1,36 @@
+{% extends 'include/question/components/card_layout.html' %}
+
+{% block card_content %}
+
+    <!-- Title -->
+    <p class="text h3">
+        <a href="#">Question</a>
+    </p>
+
+    <!-- Question info -->
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit
+        anim id est laborum
+    </p>
+
+    <!-- TODO: Сдвиг текста влево??? -->
+    <div class="row">
+
+        <!-- Answer link -->
+        <p class="cols-4 text ml-3">
+            <a href="#">Answer</a>
+        </p>
+
+        <!-- Tags -->
+        <p class="cols-8 text ml-auto mr-3">
+            Tags: <a href="#">Tag1</a>, <a href="#">Tag2</a>
+        </p>
+    </div>
+
+{% endblock %}

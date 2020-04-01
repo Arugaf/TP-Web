@@ -4,13 +4,13 @@
 }
 
 .question-card {
-    background-color: #21d5a0;
+    background-color: #e2e2e2;
 }
 
 .question-card:hover {
-    background-color: #23e1a9;
+    background-color: rgb(187, 187, 187);
 }
 
 .content-block {
-    background-color: #20c997
+    background-color: #ffffff
 }
