@@ -7,3 +7,11 @@ def index(request):
 
 def question(request):
     return render(request, 'question.html')
+
+
+def tag(request):
+    return render(request, 'tag.html')
+
+
+def ask_question(request):
+    return render(request, 'ask_question.html')

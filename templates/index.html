@@ -1,51 +1,13 @@
 {% extends 'include/base.html' %}
 
 {% block content %}
-    <div class="mt-4">
+    <!-- Questions sort -->
+    <!-- TODO: ссылки, переключатель, можно ли обойтись без списков? -->
+    <ul class="list-inline mb-4">
+        <li class="list-inline-item h1">New questions</li>
+        <li class="list-inline-item">Hot questions</li>
+    </ul>
 
-        <!-- Questions sort -->
-        <!-- TODO: ссылки, переключатель, можно ли обойтись без списков? -->
-        <ul class="list-inline mb-4">
-            <li class="list-inline-item h1">New questions</li>
-            <li class="list-inline-item">Hot questions</li>
-        </ul>
+    {% include 'include/questions/questions_layout.html' %}
 
-        <!-- Question cards -->
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-        {% include "include/question/question_card.html" %}
-
-        <!-- Pagination -->
-        <ul class="list-inline">
-            <!-- TODO: Циклы, подстановки, цвет, отступы -->
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">1</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">2</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">3</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">4</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">5</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">6</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">7</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">8</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">...</button></li>
-            <li class="list-inline-item"><button class="col btn btn-sm btn-outline-dark" type="submit">100000</button></li>
-        </ul>
-
-    </div>
 {% endblock %}

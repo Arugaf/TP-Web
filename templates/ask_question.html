@@ -1,0 +1,39 @@
+{% extends 'include/base.html' %}
+
+{% block content %}
+
+    <!-- Title -->
+    <p class="h1 mb-3">
+        New question
+    </p>
+
+    <form>
+
+        <!-- Question title -->
+        <div class="form-group">
+            <label for="Question_title">Question title:</label>
+            <input class="form-control" type="text" placeholder="Title" id="Question_title"/>
+        </div>
+
+
+        <!-- Question text -->
+        <div class="form-group">
+            <label for="Question_text">Enter your question here:</label>
+            <textarea class="form-control" placeholder="Text" id="Question_text" rows="5"></textarea>
+        </div>
+
+
+        <!-- Question tags -->
+        <div class="form-group">
+            <label for="Question_tags">Enter your tags here:</label>
+            <input class="form-control" type="text" placeholder="Tags" id="Question_tags"/>
+        </div>
+
+
+        <!-- Submit question button -->
+        <div class="form-group">
+            <button class="btn btn-outline-success" type="submit">Ask</button>
+        </div>
+    </form>
+
+{% endblock %}
