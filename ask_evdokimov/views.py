@@ -23,3 +23,7 @@ def login(request):
 
 def registration(request):
     return render(request, 'registration.html')
+
+
+def user_settings(request):
+    return render(request, 'user.html')
