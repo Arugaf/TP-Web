@@ -1,36 +1,35 @@
 <!-- TODO: Перемещение вместе со страницей? -->
 
-<nav class="main-navbar navbar navbar-expand-lg navbar-light border-bottom">
+<nav class="main-navbar navbar navbar-expand-lg navbar-light border-bottom sticky-top">
     <!-- Name -->
     <a class="navbar-brand text-dark" href="{% url 'index' %}">Æ AskEvdokimov</a>
 
     <!-- Search -->
-    <!-- TODO: Некрасиво сдвигается при максимальном уменьшении -->
-    <form class="form-inline my-2 my-lg-0 mr-auto">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-sm btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-auto mr-auto">
+        <input class="form-control mr-2 col-sm-9 col-5" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-sm btn-outline-dark" type="submit">Search</button>
     </form>
 
     <!-- Collapse button -->
-    <!-- TODO: Как определять когда нужно делать collapse? -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler position-fixed" style="right: 2%; top: 8px" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Right menu part -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse ml-0" id="navbarSupportedContent">
         <!-- TODO: Как отцентровать относительно остальных элементов? Классы элементов - элементы списка или сами элементы? -->
         <!-- TODO: Независимые параметры элементов в зависимости от collapse -->
-        <ul class="align-items-center justify-content-start navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
 
             <!-- Ask button -->
-            <li class="nav-item">
+            <li class="nav-item my-lg-auto mb-2">
                 <a class="btn btn-success mr-4 px-4" href="#" role="button">Ask!</a>
             </li>
 
             <!-- Avatar -->
-            <li class="nav-item mr-2">
+            <li class="nav-item my-lg-auto">
                 <a href="#">
                     <!-- TODO: Относительный размер -->
                     <img src="/static/img/default_avatar.svg" width="60" alt="">
@@ -38,16 +37,16 @@
             </li>
 
             <!-- User actions -->
-            <li class="nav-item">
-                <a class="nav-link active" href="#">User</a>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <a class="nav-link" href="#">Settings</a>
-                    </div>
-                    <div class="col-sm-6">
+            <li class="nav-item my-lg-auto mb-2">
+                <a class="nav-link active mb-n2" href="#">User</a>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="nav-link " href="#">Settings</a>
+                    </li>
+                    <li class="list-inline-item">
                         <a class="nav-link" href="#">Logout</a>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>

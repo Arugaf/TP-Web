@@ -1,24 +1,23 @@
-<div class="question-card border border-light rounded-left pt-3 pl-3 pr-3 pb-1 mb-4">
-    <div class="row align-items-center">
+{% load static %}
 
-        <!-- TODO: Можно ли обойтись без колонок? Криво меняется -->
-        <div class="col-3 col-lg-2 col-xl-2">
+<div class="question-card media border border-light rounded-left pt-3 pl-3 pr-3 pb-1 mb-4">
 
-            <!-- Avatar -->
-            <a class="mt-5" href="#">
-                <!-- TODO: Относительный размер, подгружать нужного пользователя, центровка аватара -->
-                <img src="/static/img/default_avatar.svg" width="60" alt="">
-            </a>
+    <div class="mr-3 align-self-center justify-content-center">
 
-            <!-- Rating -->
-            {% include 'include/question/components/rating.html' %}
+        <!-- Avatar -->
+        <a class="d-flex justify-content-center" href="#">
+            <!-- TODO: Относительный размер, подгружать нужного пользователя -->
+            <img src="{% static 'img/default_avatar.svg' %}" width="60" alt="">
+        </a>
 
-        </div>
-
-        <!-- Question -->
-        <div class="col-9 col-lg-10 col-xl-10">
-            {% block card_content %}{% endblock %}
-        </div>
+        <!-- Rating -->
+        {% include 'include/question/components/rating.html' %}
 
     </div>
+
+    <!-- Question -->
+    <div class="media-body ">
+        {% block card_content %}{% endblock %}
+    </div>
+
 </div>

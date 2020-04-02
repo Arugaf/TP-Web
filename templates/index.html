@@ -3,10 +3,17 @@
 {% block content %}
     <!-- Questions sort -->
     <!-- TODO: ссылки, переключатель, можно ли обойтись без списков? -->
-    <ul class="list-inline mb-4">
-        <li class="list-inline-item h1">New questions</li>
-        <li class="list-inline-item">Hot questions</li>
-    </ul>
+    <div class="inline mb-4">
+        <span class=" h1">New questions</span>
+        <span class="">Hot questions</span>
+    </div>
+
+    <!-- todo: Поменять на кнопки -->
+   {% comment %} <div class="btn-group mb-4" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">New questions</button>
+        <button type="button" class="btn btn-secondary">Hot questions</button>
+        <button type="button" class="btn btn-secondary">Right</button>
+    </div>{% endcomment %}
 
     {% include 'include/questions/questions_layout.html' %}
 

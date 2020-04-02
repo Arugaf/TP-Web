@@ -17,4 +17,7 @@
 
 .right-menu-block {
     background-color: #fafafa;
+    height: 100%;
+    position: fixed;
+    right: 0
 }
