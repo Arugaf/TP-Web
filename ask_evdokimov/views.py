@@ -19,3 +19,7 @@ def ask_question(request):
 
 def login(request):
     return render(request, 'login.html')
+
+
+def registration(request):
+    return render(request, 'registration.html')
