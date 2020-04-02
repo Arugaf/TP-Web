@@ -15,3 +15,7 @@ def tag(request):
 
 def ask_question(request):
     return render(request, 'ask_question.html')
+
+
+def login(request):
+    return render(request, 'login.html')

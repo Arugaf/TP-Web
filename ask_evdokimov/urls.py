@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('1', views.question, name="question"),
     path('tag', views.tag, name="tag"),
-    path('ask', views.ask_question, name="ask_question")
+    path('ask', views.ask_question, name="ask_question"),
+    path('login', views.login, name="login")
 ]
