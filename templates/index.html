@@ -1,19 +1,31 @@
 {% extends 'include/base.html' %}
 
 {% block content %}
-    <!-- Questions sort -->
-    <!-- TODO: ссылки, переключатель, можно ли обойтись без списков? -->
-    <div class="inline mb-4">
-        <span class=" h1">New questions</span>
-        <span class="">Hot questions</span>
-    </div>
 
-    <!-- todo: Поменять на кнопки -->
-   {% comment %} <div class="btn-group mb-4" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">New questions</button>
-        <button type="button" class="btn btn-secondary">Hot questions</button>
-        <button type="button" class="btn btn-secondary">Right</button>
-    </div>{% endcomment %}
+    <!-- Questions sort -->
+    <div class="inline mb-4">
+        {% if tag %}
+
+            <p class="h1 mb-3">
+                {{ tag }}
+            </p>
+
+        {% else %}
+
+            {% if hot %}
+
+                <span class="h5"><a href="{% url 'index' %}">New questions</a></span>
+                <span class="h1"><a href="{% url 'hot' %}">Hot questions</a></span>
+
+            {% else %}
+
+                <span class="h1"><a href="{% url 'index' %}">New questions</a></span>
+                <span class="h5"><a href="{% url 'hot' %}">Hot questions</a></span>
+
+            {% endif %}
+
+        {% endif %}
+    </div>
 
     {% include 'include/questions/questions_layout.html' %}
 

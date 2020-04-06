@@ -1,4 +1,4 @@
-<!-- TODO: Перемещение вместе со страницей? -->
+{% load static %}
 
 <nav class="main-navbar navbar navbar-expand-lg navbar-light border-bottom sticky-top">
     <!-- Name -->
@@ -18,36 +18,53 @@
     </button>
 
     <!-- Right menu part -->
+
     <div class="collapse navbar-collapse ml-0" id="navbarSupportedContent">
-        <!-- TODO: Как отцентровать относительно остальных элементов? Классы элементов - элементы списка или сами элементы? -->
-        <!-- TODO: Независимые параметры элементов в зависимости от collapse -->
-        <ul class="navbar-nav ml-auto">
 
-            <!-- Ask button -->
-            <li class="nav-item my-lg-auto mb-2">
-                <a class="btn btn-success mr-4 px-4" href="#" role="button">Ask!</a>
-            </li>
+        {% if user.is_authenticated %}
 
-            <!-- Avatar -->
-            <li class="nav-item my-lg-auto">
-                <a href="#">
-                    <!-- TODO: Относительный размер -->
-                    <img src="/static/img/default_avatar.svg" width="60" alt="">
-                </a>
-            </li>
+            <ul class="navbar-nav ml-auto">
 
-            <!-- User actions -->
-            <li class="nav-item my-lg-auto mb-2">
-                <a class="nav-link active mb-n2" href="#">User</a>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a class="nav-link " href="#">Settings</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+                <!-- Ask button -->
+                <li class="nav-item my-lg-auto mb-2">
+                    <a class="btn btn-success mr-4 px-4" href="#" role="button">Ask!</a>
+                </li>
+
+                <!-- Avatar -->
+                <li class="nav-item my-lg-auto avatar-min">
+                    <a href="#">
+                        <img src="{% static 'img/default_avatar.svg' %}" alt="">
+                    </a>
+                </li>
+
+                <!-- User actions -->
+                <li class="nav-item my-lg-auto my-auto">
+                    <a class="nav-link active mb-n2" href="#">{{ user.username }}</a>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a class="nav-link " href="{% url 'user' %}">Settings</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        {% else %}
+
+            <ul class="navbar-nav ml-auto my-auto">
+
+                <!-- User actions -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Registration</a>
+                </li>
+            </ul>
+
+        {% endif %}
     </div>
+
 </nav>

@@ -1,6 +1,6 @@
 {% extends 'include/base.html' %}
 
-<!-- TODO: Подхватывать данные7 -->
+{% load static %}
 
 {% block content %}
 
@@ -49,7 +49,7 @@
         <!-- Avatar upload -->
         <div class="form-group">
             <label for="avatar">
-                <img src="/static/img/default_avatar.svg" width="60" alt="">
+                <img src="{% static 'img/default_avatar.svg' %}" alt="">
                 <br>
                 Upload avatar
             </label>

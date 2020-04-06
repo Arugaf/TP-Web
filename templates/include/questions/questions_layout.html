@@ -1,28 +1,14 @@
 <!-- Question cards -->
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
-{% include "include/question/question_card.html" %}
+{% for question in questions %}
 
+{% include "include/question/question_card.html" with question=question %}
+
+{% endfor %}
+
+
+<!-- TODO: Пагинация и функция пагинации -->
 <!-- Pagination -->
 <ul class="list-inline">
-    <!-- TODO: Циклы, подстановки, цвет, отступы -->
     <li class="list-inline-item">
         <button class="col btn btn-sm btn-outline-dark" type="submit">1</button>
     </li>

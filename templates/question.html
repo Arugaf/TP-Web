@@ -1,16 +1,18 @@
 {% extends 'include/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-    <div class="row border-bottom py-3">
+    <div class="media border-bottom py-3">
 
-        <!-- TODO: Можно ли обойтись без колонок? Криво меняется -->
-        <div class="col-3 col-lg-2">
+        <div class="my-auto mr-3 align-self-center justify-content-center">
 
             <!-- Avatar -->
-            <a class="mt-5" href="#">
-                <!-- TODO: Относительный размер, подгружать нужного пользователя, центровка аватара -->
-                <img src="/static/img/default_avatar.svg" width="120" alt="">
+            <a class="d-flex justify-content-center" href="#">
+                <div class="avatar-big">
+                    <img src="{% static 'img/default_avatar.svg' %}" alt="">
+                </div>
             </a>
 
             <!-- Rating -->
@@ -18,38 +20,35 @@
 
         </div>
 
-        <div class="col-9 col-lg-10">
-            <div class="ml-3 mr-3">
-                <!-- Title -->
-                <!-- TODO: Кривой margin? -->
-                <p class="text h2">Question title</p>
+        <div class="media-body ml-4 mr-4">
 
-                <!-- Question info -->
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et
-                    dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex
-                    ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore
-                    eu
-                    fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt
-                    mollit
-                    anim id est laborum
-                </p>
+            <!-- Title -->
+            <p class="text h2">Question title</p>
 
-                <!-- Tags -->
-                <p>
-                    Tags: <a href="#">Tag1</a>, <a href="#">Tag2</a>
-                </p>
+            <!-- Question info -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore
+                et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip
+                ex
+                ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore
+                eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt
+                mollit
+                anim id est laborum
+            </p>
 
-            </div>
+            <!-- Tags -->
+            <p>
+                Tags: <a href="#">Tag1</a>, <a href="#">Tag2</a>
+            </p>
 
         </div>
 
@@ -57,7 +56,6 @@
 
     <!-- Answers -->
     <div class="border-bottom py-3">
-        <!-- TODO: Bg фон должен заполнять целиком -->
         {% include 'include/question/answer_card.html' %}
         {% include 'include/question/answer_card.html' %}
         {% include 'include/question/answer_card.html' %}
