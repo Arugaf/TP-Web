@@ -23,31 +23,17 @@
         <div class="media-body ml-4 mr-4">
 
             <!-- Title -->
-            <p class="text h2">Question title</p>
+            <p class="text h2">{{ title }}</p>
 
             <!-- Question info -->
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore
-                et
-                dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip
-                ex
-                ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore
-                eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt
-                mollit
-                anim id est laborum
-            </p>
+            <p>{{ text }}</p>
 
             <!-- Tags -->
             <p>
-                Tags: <a href="#">Tag1</a>, <a href="#">Tag2</a>
+                Tags:
+                {% for tag in tags %}
+                    <a href="{% url 'tag' tag_name=tag %}">{{ tag }}</a>
+                {% endfor %}
             </p>
 
         </div>
@@ -56,9 +42,12 @@
 
     <!-- Answers -->
     <div class="border-bottom py-3">
-        {% include 'include/question/answer_card.html' %}
-        {% include 'include/question/answer_card.html' %}
-        {% include 'include/question/answer_card.html' %}
+
+        {% for answer in answers %}
+
+            {% include 'include/question/answer_card.html' with answer=answer %}
+
+        {% endfor %}
     </div>
 
     <!-- Answer -->

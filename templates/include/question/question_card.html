@@ -8,9 +8,7 @@
     </p>
 
     <!-- Question info -->
-    <p class="text-break">
-        {{ question.text }}
-    </p>
+    <p class="text-break">{{ question.text }}</p>
 
     <div class="row">
 
@@ -22,7 +20,7 @@
         <!-- Tags -->
         <p class="cols-8 text ml-auto mr-3">
             Tags:
-            {% for tag in question.tag %}
+            {% for tag in question.tags %}
                 <a href="{% url 'tag' tag_name=tag %}">{{ tag }}</a>
             {% endfor %}
         </p>
