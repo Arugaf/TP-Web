@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 
 # TODO: Нужна ли вьюшка для популярных тегов и лучших юзеров? Как организовать выборку и подстановку ссылок?
@@ -75,10 +76,14 @@ def ask_question(request):
 
 
 def login(request):
+    if request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'login.html')
 
 
 def registration(request):
+    if request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'registration.html')
 
 
