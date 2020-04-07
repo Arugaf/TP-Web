@@ -6,6 +6,7 @@ urlpatterns = [
     path('<int:page_id>/', views.index, name="index"),
     path('question/<int:question_id>/', views.question, name="question"),
     path('tag/<str:tag_name>/', views.tag, name="tag"),
+    path('tag/<str:tag_name>/<int:page_id>', views.tag, name="tag"),
     path('ask/', views.ask_question, name="ask_question"),
     path('login/', views.login, name="login"),
     path('signup/', views.registration, name="registration"),

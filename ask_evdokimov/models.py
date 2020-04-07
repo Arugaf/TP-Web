@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Count
 
 
 class UserWrap(models.Model):
@@ -23,12 +24,14 @@ class QuestionManager(models.Manager):
     def best_questions(self):
         return self.get_queryset().order_by('-rating')
 
+    def tag_questions(self, tag):
+        return self.get_queryset().filter(tags__title__contains=tag)
+
 
 class Question(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     rating = models.IntegerField(default=0)
-
     date = models.DateTimeField(auto_now_add=True)
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
