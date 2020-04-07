@@ -1,28 +1,32 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.shortcuts import redirect
+from ask_evdokimov import paginator
+from ask_evdokimov.models import *
 
 
 # TODO: Нужна ли вьюшка для популярных тегов и лучших юзеров? Как организовать выборку и подстановку ссылок?
 
-def index(request, is_hot=False):
+def index(request, page_id=1, is_hot=False):
     questions = [{
         'title': 'question' + str(i),
         'id': i,
-        'text': '''Lorem ipsum dolor sit amet, consectetur 
-               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-               veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-               irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+        'text': '''Lorem ipsum dolor sit amet, consectetur
+               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+               veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+               irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum '''
                 + str(i),
         'tags': ['tag1', 'tag2']
-    } for i in range(0, 20)]
+    } for i in range(0, 40)]
 
-    context = {'questions': questions}
+    context = paginator.paginate(questions, page_id)
     if is_hot is True:
         context['hot'] = True
 
     return render(request, 'index.html', context)
+
+
 
 
 def hot(request):

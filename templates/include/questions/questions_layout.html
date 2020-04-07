@@ -1,13 +1,24 @@
 <!-- Question cards -->
 {% for question in questions %}
 
-{% include "include/question/question_card.html" with question=question %}
+    {% include "include/question/question_card.html" with question=question %}
 
 {% endfor %}
 
 
 <!-- TODO: Пагинация и функция пагинации -->
 <!-- Pagination -->
+
+<ul class="list-inline">
+    {% for page in number_of_pages %}
+        <li class="list-inline-item">
+            <a href="{% url 'index' page_id=page %}"><button class="col btn btn-sm btn-outline-dark" type="submit">{{ page }}</button></a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% comment %}
 <ul class="list-inline">
     <li class="list-inline-item">
         <button class="col btn btn-sm btn-outline-dark" type="submit">1</button>
@@ -40,3 +51,4 @@
         <button class="col btn btn-sm btn-outline-dark" type="submit">100000</button>
     </li>
 </ul>
+{% endcomment %}
