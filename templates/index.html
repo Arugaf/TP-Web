@@ -1,32 +1,32 @@
-{% extends 'include/base.html' %}
+{% extends "base.html" %}
 
-{% block content %}
+{% block index %}
 
-    <!-- Questions sort -->
-    <div class="inline mb-4">
-        {% if tag %}
-
-            <p class="h1 mb-3">
-                {{ tag }}
-            </p>
-
-        {% else %}
-
-            {% if hot %}
-
-                <span class="h5"><a href="{% url 'index' %}">New questions</a></span>
-                <span class="h1"><a href="{% url 'hot' %}">Hot questions</a></span>
-
+    {% block sortParameters %}
+        <div class="mb-3">
+            {% if tag %}
+                <h5> Сортировать по тегу <a href="{% url 'tag' tag=tag %}" class="text-decoration-none">{{ tag }}</a></h5>
             {% else %}
-
-                <span class="h1"><a href="{% url 'index' %}">New questions</a></span>
-                <span class="h5"><a href="{% url 'hot' %}">Hot questions</a></span>
-
+                <a href="{% url 'index' %}"><button type="button" class="btn btn-outline-primary btn-sm">По дате</button></a>
+                <a href="{% url 'hot' %}"><button type="button" class="btn btn-outline-primary btn-sm">По рейтингу</button></a>
             {% endif %}
+        </div>
+    {% endblock %}
 
-        {% endif %}
+    <!-- Questions list -->
+    <div>
+        <ul class="list-unstyled">
+            {% for question in object_list %}
+                {% include 'include/question_index.html' with question=question %}
+            {% empty %}
+                <div class="alert alert-secondary" role="alert">
+                    Вопросы не найдены
+                </div>
+            {% endfor %}
+        </ul>
     </div>
 
-    {% include 'include/questions/questions_layout.html' %}
+    <!-- Pagination -->
+    {% include 'include/pagination.html' with object_list=object_list page_range=page_range %}
 
 {% endblock %}
